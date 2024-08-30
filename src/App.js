@@ -22,8 +22,8 @@ const FileExplorer = () => {
       setLoadTime(endTime - startTime);
       setFiles(response.data);
     } catch (error) {
-      console.error('Error fetching files:', error);
-      setError('Failed to fetch directory contents. Please try again.');
+      console.error('Oh oh you ran into an error fetching files:', error);
+      setError('couldn\'t fetch your contents, try again please.');
     }
   };
 
@@ -33,8 +33,10 @@ const FileExplorer = () => {
 
   return (
     <div className="file-explorer">
-      <h1>File Explorer</h1>
-      <p>Current Path: {currentPath || 'Home Directory'}</p>
+      <h1>📄 File explorer app 📄 </h1>
+      <h3 style={{ fontSize: '1em', color: 'red' }}>By: Dino E 💻 </h3>
+      <button onClick={() => window.location.href = "http://localhost:3000/"}> Go Home </button>
+      <p style={{ fontWeight: 'bold' }}>Current Path: {currentPath || 'Home Directory'}</p>
       {loadTime && <p>Load Time: {loadTime.toFixed(2)} ms</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <ul>
@@ -47,10 +49,10 @@ const FileExplorer = () => {
             ) : (
               <span>📄 {file.filename}</span>
             )}
-            <span> - Size: {file.size} bytes</span>
-            <span> - Type: {file.isDirectory ? 'Directory' : file.extension}</span>
-            <span> - Created: {new Date(file.createdDate).toLocaleString()}</span>
-            <span> - Permissions: {file.permissions}</span>
+            <span> -- Size: {file.size} bytes</span>
+            <span> -- Type: {file.isDirectory ? 'Directory' : file.extension}</span>
+            <span> -- Created: {new Date(file.createdDate).toLocaleString()}</span>
+            <span> -- Permissions: {file.permissions}</span>
           </li>
         ))}
       </ul>

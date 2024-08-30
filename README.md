@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Summary
+Hi there, I created this readme to help you install the application on your side. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# File Explorer App
 
-## Available Scripts
+The app I create is called "file explorer" which is built with React (frontend) and Node.js (backend). It allows users to browse the local file system, view file details, and navigate through directories.
 
-In the project directory, you can run:
+## What you need
 
-### `npm start`
+- Node.js  (v14 or later)
+- npm (usually comes with Node.js)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup Instructions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```
+   git clone [repository-url]
+   cd file-explorer-app
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies for both frontend and backend:
+   ```
+   # Install frontend dependencies
+   cd client
+   npm install
 
-### `npm run build`
+   # Install backend dependencies
+   cd ../server
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Start the backend server:
+   ```
+   # In the server directory: whicih is (cd server)
+   npm start
+   ```
+   The server should start running on `http://localhost:3001`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. In a new terminal, start the frontend development server: which is (cd file-explorer)
+   ```
+   # In the client directory
+   npm start
+   ```
+   The app should then open in the browser at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+- The app will display the contents of the user's home directory.
+- Click on folder names to navigate into directories.
+- File details (size, type, creation date, permissions) are displayed for each item.
+- The current path and load time for each directory are shown at the top.
+- To start from the begging please re-load the page.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## SIde Note
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For security reasons, the app only accesses directories and files that the Node.js process has permission to read. It starts in your home directory by default.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## If it doesnt work
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Ensure both the backend and frontend servers are running.
+2. Check the console in your browser and the terminal running the servers for any error messages.
+3. Make sure you have the necessary permissions to read files in your home directory.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Packages loaded:
+1. npm install express cors 
+2. npm install axios
