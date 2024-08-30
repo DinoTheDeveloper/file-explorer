@@ -1,6 +1,10 @@
 # Summary
 Hi there, I created this readme to help you install the application on your side. 
 
+```
+By: Dino E
+```
+
 # File Explorer App
 
 The app I create is called "file explorer" which is built with React (frontend) and Node.js (backend). It allows users to browse the local file system, view file details, and navigate through directories.
